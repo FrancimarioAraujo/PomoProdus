@@ -1,0 +1,59 @@
+body{
+    background-color: rgb(240, 91, 86);
+    margin: 0 auto;
+}
+
+#menu ul{
+    list-style: none;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#menu ul li{
+    display: inline;
+}
+
+#menu ul li button{
+    color: white;
+    background-color: rgb(240, 91, 86);
+    border: white 2px solid;
+    padding: 10px;
+    margin-top: 10px;
+    font-weight: bolder;
+    font-size:20px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#menu ul li button:hover{
+    background-color: rgba(241, 55, 49, 0.938);
+    transition: 2s;
+}
+
+#timer{
+    text-align: center;
+    margin-top: 10%;
+}
+
+#timer span{
+    font-size:120px;
+    color: white;
+    font-weight: bolder;
+}
+
+#btn{
+    text-align: center;
+}
+
+#btnStart{
+    margin-top:50px;
+    width: 150px;
+    height: 75px;
+    border:solid 2px white;
+    font-size:40px;
+    color: rgb(240, 91, 86);
+    background-color: white;
+    border-radius:10px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
