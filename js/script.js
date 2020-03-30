@@ -86,6 +86,8 @@ btnPomodoro.onclick = function(){
     minutes = 0;
     status = "pomodoro";
     horaText.innerText = "25:00";
+    btnStart.innerText = "START";
+    clearInterval(intervalo);
     changeColor('#F05B56');
 }
 
@@ -94,6 +96,8 @@ btnShortBreak.onclick = function(){
     minutes = 0;
     status = "shortBreak";
     horaText.innerText = "5:00";
+    btnStart.innerText = "START";
+    clearInterval(intervalo);
     changeColor('#4CA6A9');
 }
 
@@ -102,6 +106,8 @@ btnLongBreak.onclick = function(){
     minutes = 0;
     status = "longBreak";
     horaText.innerText = "15:00";
+    btnStart.innerText = "START";
+    clearInterval(intervalo);
     changeColor('#4CA6A9');
 }
 
