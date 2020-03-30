@@ -94,7 +94,7 @@ btnShortBreak.onclick = function(){
 
 btnLongBreak.onclick = function(){
     modifyStatus('longBreak',15);
-    changeColor('#4CA6A9','black');
+    changeColor('#498fc1','black');
 }
 
 btnStart.onclick = function(){
