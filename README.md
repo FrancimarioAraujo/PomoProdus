@@ -7,3 +7,6 @@ Long Break
 Pomodoro
 ![image](https://user-images.githubusercontent.com/44786237/77943709-0ef6c100-7294-11ea-8263-2062e8717b28.png)
 
+Short Break
+
+![image](https://user-images.githubusercontent.com/44786237/77943798-3b124200-7294-11ea-9c25-a1047e047ca7.png)
