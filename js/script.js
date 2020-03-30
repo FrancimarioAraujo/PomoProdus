@@ -12,60 +12,45 @@ let minutes = 0;
 let seconds = 0;
 let status = "pomodoro";
 let intervalo = 0;
-//
+
+
+function modifyStatus(statu,minute){
+    seconds = 0;
+    minutes = 0;
+    status = statu;
+    horaText.innerText = minute + ":00";
+    btnStart.innerText = "START";
+    clearInterval(intervalo);
+}
+
+function intervalBreak(interval){
+        seconds+=1;
+        if(minutes == interval){
+            clearInterval(intervalo);
+            horaText.innerText = interval + ":00";
+            btnStart.innerText = "START";
+            seconds = 0;
+            minutes = 0;
+            }
+            else{
+                if(seconds == 60){
+                    seconds = 0;
+                    minutes +=1;
+                }
+                horaText.innerText = minutes + ":" + seconds;
+        }
+}
+
 function timer(){
     switch (status) {
         case "pomodoro":
-            seconds+=1;
-            if(minutes == 25){
-                clearInterval(intervalo);
-                horaText.innerText = "25:00";
-                btnStart.innerText = "START";
-                seconds = 0;
-                minutes = 0;
-            }
-            else{
-                if(seconds == 60){
-                    seconds = 0;
-                    minutes +=1;
-                }
-                horaText.innerText = minutes + ":" + seconds;
-            }
-
+            intervalBreak(1);
             break;
         case "longBreak":
-            seconds+=1;
-            if(minutes == 25){
-                clearInterval(intervalo);
-                horaText.innerText = "15:00";
-                btnStart.innerText = "START";
-                seconds = 0;
-                minutes = 0;
-            }
-            else{
-                if(seconds == 60){
-                    seconds = 0;
-                    minutes +=1;
-                }
-                horaText.innerText = minutes + ":" + seconds;
-            }
+            intervalBreak(15);
             break;
         case "shortBreak":
-            seconds+=1;
-            if(minutes == 5){
-                clearInterval(intervalo);
-                horaText.innerText = "5:00";
-                btnStart.innerText = "START";
-                seconds = 0;
-                minutes = 0;
-            }
-            else{
-                if(seconds == 60){
-                    seconds = 0;
-                    minutes +=1;
-                }
-                horaText.innerText = minutes + ":" + seconds;
-            }
+            intervalBreak(5);
             break;    
         default:
             console.log("Ocorreu um erro inesperado! na variavel status");
@@ -82,32 +67,17 @@ function changeColor(color){
 }
 //When the button "pomodoro" will clicked, will run this function
 btnPomodoro.onclick = function(){
-    seconds = 0;
-    minutes = 0;
-    status = "pomodoro";
-    horaText.innerText = "25:00";
-    btnStart.innerText = "START";
-    clearInterval(intervalo);
+    modifyStatus('pomodoro',25);
     changeColor('#F05B56');
 }
 
 btnShortBreak.onclick = function(){
-    seconds = 0;
-    minutes = 0;
-    status = "shortBreak";
-    horaText.innerText = "5:00";
-    btnStart.innerText = "START";
-    clearInterval(intervalo);
+    modifyStatus('shortBreak',5);
     changeColor('#4CA6A9');
 }
 
 btnLongBreak.onclick = function(){
-    seconds = 0;
-    minutes = 0;
-    status = "longBreak";
-    horaText.innerText = "15:00";
-    btnStart.innerText = "START";
-    clearInterval(intervalo);
+    modifyStatus('longBreak',15);
     changeColor('#4CA6A9');
 }
 
