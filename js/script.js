@@ -58,27 +58,43 @@ function timer(){
     }
 }
 //Change color of layout
-function changeColor(color){
+function changeColor(color,colorBtn){
     body.style.backgroundColor = color;
     btnStart.style.color = color;
-    btnPomodoro.style.backgroundColor = color;
-    btnShortBreak.style.backgroundColor = color;
-    btnLongBreak.style.backgroundColor = color;
+    switch (status) {
+        case "pomodoro":
+            btnPomodoro.style.backgroundColor = colorBtn;
+            btnShortBreak.style.backgroundColor = color;
+            btnLongBreak.style.backgroundColor = color;
+            break;
+        case "shortBreak":
+            btnPomodoro.style.backgroundColor = color;
+            btnShortBreak.style.backgroundColor = colorBtn;
+            btnLongBreak.style.backgroundColor = color;
+            break;
+        case "longBreak":
+            btnPomodoro.style.backgroundColor = color;
+            btnShortBreak.style.backgroundColor = color;
+            btnLongBreak.style.backgroundColor = colorBtn;
+            break;    
+        default:
+            break;
+    }
 }
 //When the button "pomodoro" will clicked, will run this function
 btnPomodoro.onclick = function(){
     modifyStatus('pomodoro',25);
-    changeColor('#F05B56');
+    changeColor('#F05B56','black');
 }
 
 btnShortBreak.onclick = function(){
     modifyStatus('shortBreak',5);
-    changeColor('#4CA6A9');
+    changeColor('#4CA6A9','black');
 }
 
 btnLongBreak.onclick = function(){
     modifyStatus('longBreak',15);
-    changeColor('#4CA6A9');
+    changeColor('#4CA6A9','black');
 }
 
 btnStart.onclick = function(){
